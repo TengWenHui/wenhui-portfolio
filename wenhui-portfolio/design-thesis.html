@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-201082160-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-201082160-1");
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendors.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/favicon.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <link rel="manifest" href="img/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="img/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Data Sonification</title>
+  </head>
+
+  <body class="preloader-visible" data-barba="wrapper">
+    <!-- preloader start -->
+    <div class="preloader js-preloader">
+      <div class="preloader__bg"></div>
+
+      <div class="preloader__progress">
+        <div class="preloader__progress__inner"></div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- cursor start -->
+    <div class="cursor js-cursor">
+      <div class="cursor__wrapper">
+        <div class="cursor__follower js-follower"></div>
+        <div class="cursor__label js-label"></div>
+        <div class="cursor__icon js-icon"></div>
+      </div>
+    </div>
+    <!-- cursor end -->
+
+    <!-- barba container start -->
+    <div class="barba-container" data-barba="container">
+      <!-- to-top-button start -->
+      <div data-cursor class="backButton js-backButton">
+        <span class="backButton__bg"></span>
+        <div class="backButton__icon__wrap">
+          <i
+            class="backButton__button js-top-button"
+            data-feather="arrow-up"
+          ></i>
+        </div>
+      </div>
+      <!-- to-top-button end -->
+
+      <main class="">
+        <!-- header start -->
+        <header class="header -dark -sticky-light js-header">
+          <!-- header__bar start -->
+          <div class="header__bar">
+            <div class="header__logo js-header-logo">
+              <a data-barba href="index.html">
+                <img
+                  class="header__logo__dark js-lazy"
+                  data-srcset="images/logo/logo-black.png"
+                  data-src="images/logo/logo-black.png"
+                  alt="Logo"
+                />
+              </a>
+              <a data-barba href="index.html">
+                <img
+                  class="header__logo__light js-lazy"
+                  data-srcset="images/logo/logo-white.png"
+                  data-src="images/logo/logo-white.png"
+                  alt="Logo"
+                />
+              </a>
+            </div>
+
+            <div class="header__menu js-header-menu">
+              <button type="button" class="nav-button-open js-nav-open">
+                <i class="icon" data-feather="menu"></i>
+              </button>
+            </div>
+          </div>
+          <!-- header__bar end -->
+
+          <!-- nav start -->
+          <nav class="nav js-nav">
+            <div class="nav__inner js-nav-inner">
+              <div class="nav__bg js-nav-bg"></div>
+
+              <div class="nav__container">
+                <div class="nav__header">
+                  <button type="button" class="nav-button-back js-nav-back">
+                    <i class="icon" data-feather="arrow-left-circle"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="nav-btn-close js-nav-close pointer-events-none"
+                  >
+                    <i class="icon" data-feather="x"></i>
+                  </button>
+                </div>
+
+                <div class="nav__content">
+                  <div class="nav__content__left">
+                    <div class="navList__wrap">
+                      <ul class="navList js-navList">
+                        <li>
+                          <a data-barba href="index.html"> Home </a>
+                        </li>
+                        <li>
+                          <a data-barba href="about.html"> About </a>
+                        </li>
+
+                        <li class="menu-item-has-children">
+                          <a>Work</a>
+
+                          <ul class="subnav-list">
+                            <li>
+                              <a data-barba href="design.html"
+                                >Design portfolio</a
+                              >
+                            </li>
+                            <li>
+                              <a data-barba href="speaking-pr.html"
+                                >Speaking & PR</a
+                              >
+                            </li>
+                            <li>
+                              <a data-barba href="side-hustles.html"
+                                >Side hustles</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li>
+                          <a
+                            data-barba
+                            href="https://medium.com/pennypang-goals"
+                            target="_blank"
+                          >
+                            Blog
+                          </a>
+                        </li>
+
+                        <li>
+                          <a data-barba href="contact.html"> Contact </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="nav__content__right">
+                    <div class="nav__info">
+                      <div class="nav__info__item js-navInfo-item">
+                        <h5 class="text-sm tracking-none fw-500">Location</h5>
+
+                        <div
+                          class="nav__info__content text-lg text-white mt-16"
+                        >
+                          <p>Sydney, Australia</p>
+                        </div>
+                      </div>
+
+                      <div class="nav__info__item js-navInfo-item">
+                        <h5 class="text-sm tracking-none fw-500">Socials</h5>
+
+                        <div
+                          class="nav__info__content text-lg text-white mt-16"
+                        >
+                          <a
+                            href="https://medium.com/pennypang-goals"
+                            target="_blank"
+                            >Medium</a
+                          >
+                          <a
+                            href="https://www.linkedin.com/in/pennytalalak/"
+                            target="_blank"
+                            >LinkedIn</a
+                          >
+                          <a
+                            href="https://dribbble.com/pennypang"
+                            target="_blank"
+                            >Dribble</a
+                          >
+                          <a
+                            href="https://www.youtube.com/channel/UCXR6RjSZOQPkdqJHSMAWdiQ"
+                            target="_blank"
+                            >YouTube</a
+                          >
+                        </div>
+                      </div>
+
+                      <div class="nav__info__item js-navInfo-item">
+                        <h5 class="text-sm tracking-none fw-500">Contact</h5>
+
+                        <div
+                          class="nav__info__content text-lg text-white mt-16"
+                        >
+                          <a href="mailto: talalakpenny@hotmail.com"
+                            >talalakpenny@hotmail.com</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <!-- nav end -->
+        </header>
+        <!-- header end -->
+
+        <!-- page header start -->
+        <section
+          class="
+            masthead
+            -type-work-1
+            -full-screen
+            bg-black
+            sm:text-center
+            js-masthead-type-work-1 js-bg
+          "
+        >
+          <div
+            data-parallax="0.7"
+            class="masthead__bg overlay-black-md js-image"
+          >
+            <div
+              data-parallax-target
+              class="bg-image js-lazy js-bg-item"
+              data-bg="images/work/design/thesis/hero-img.png"
+            ></div>
+          </div>
+
+          <div class="masthead__content">
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-xl-10 col-sm-10 z-3">
+                  <div data-split="lines">
+                    <p
+                      class="
+                        masthead__subtitle
+                        text-lg
+                        sm:text-base
+                        text-white
+                        mb-32
+                        sm:mb-24
+                        js-subtitle
+                      "
+                    >
+                      Case studies
+                    </p>
+                  </div>
+
+                  <div data-split="lines">
+                    <h1 class="masthead__title text-white fw-700 js-title">
+                      Data Sonification
+                    </h1>
+                  </div>
+
+                  <div class="masthead__info__wrap">
+                    <div class="row y-gap-32">
+                      <div class="col-lg-auto col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Role
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              Research & Front-end
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-auto offset-lg-1 col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Duration
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              10 weeks
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-auto offset-lg-1 col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Tools
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              React.js
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-auto offset-lg-1 col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Client
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              Personal Project
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- page header end -->
+
+        <!-- section start -->
+        <section class="layout-pt-lg layout-pb-lg">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-500 mr-16">01.-</p>
+                  <p class="text-dark uppercase fw-500">Context</p>
+                </div>
+              </div>
+
+              <div class="col-xl-7 col-lg-8">
+                <div class="md:mt-20">
+                  <h2 class="text-3xl text-black">Overview</h2>
+                  <p class="text-lg fw-400 text-grey mt-24 sm:mt-16">
+                    This research aims to explore the possibilities of data
+                    sonification for wayfinding in a public space. An example of
+                    data will be derived from the open data source of NSW
+                    Transport Data API which will be combined with GPS data to
+                    provide a real-time environment. Ultimately, the research
+                    aims to demonstrate the perception of soundscape as a way to
+                    improve wayfinding but can also be potentially relevant for
+                    visually impaired people.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <img src="images/work/design/thesis/workflow.png" width="100%" />
+            </div>
+          </div>
+        </div>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section class="layout-pt-lg layout-pb-lg">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-500 mr-16">02.-</p>
+                  <p class="text-dark uppercase fw-500">Research</p>
+                </div>
+              </div>
+
+              <div class="col-xl-7 col-lg-8">
+                <div class="md:mt-20">
+                  <h2 class="text-3xl text-black">Background Research</h2>
+                  <p class="text-lg fw-400 text-grey mt-24 sm:mt-16">
+                    In the twenty-first century, the everyday use of mobile
+                    digital technologies has influenced how people make
+                    wayfinding decisions in the urban environment. Technologies
+                    such as Google maps, geographic positioning systems (GPS),
+                    and dynamic forms of digital signage are now implicated in
+                    the decisions people make about where to go and how to get
+                    there. While these ubiquitous tools are efficient and
+                    beneficial in navigation performance, they are vision
+                    centric which reduces situation awareness. According to
+                    Centre for Road Safety — Pedestrian Trauma Trends Report
+                    2017, pedestrian fatality rate increases in average of 15%
+                    every 5 years due to mobile phone use and these numbers are
+                    rising. Similarly for drivers, research from Nasar and
+                    Troyer (2013) confirms the higher rates of accidents when
+                    mobile phones are activated while driving. In addition to
+                    risks within utilising a visual device for wayfinding, the
+                    process does not accommodate people who are vision impaired
+                    or cannot read.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- INTERVIEW section start -->
+        <section class="layout-pt-lg layout-pb-lg bg-dark-1">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-xl-7 col-lg-8">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-600 mr-16">02.-</p>
+                  <p class="uppercase fw-500 text-white">Research</p>
+                </div>
+
+                <h2 class="text-3xl fw-600 text-white mt-20">Interview</h2>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  Before going in the interview, I have made a couple of
+                  assumptions.
+                </p>
+                <li class="text-white">
+                  1. People are relying on visual navigation tool to identify
+                  the point of interest (POI) as well as to acquire knowledge
+                  about it.
+                </li>
+                <li class="text-white">
+                  2. People are often at higher risk when using visual
+                  navigation tool to navigate
+                </li>
+                <li class="text-white">
+                  3. People are listening to music on their daily commute or
+                  during their navigation process
+                </li>
+
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  I interviewed 12 people mainly students from class and a
+                  couple of work colleague in this process. The interview was
+                  structured in a conversational way to gain more insights into
+                  the topic and their experience. The questions were set
+                  starting off with their journey to navigating, hazards and
+                  challenges and concluded with audio related question. Most of
+                  the interviewers travel via train station and have not
+                  actually encountered accidents but are at higher risks.
+                  Examples of risks include bumping into a pole, walking into
+                  people and crossing the road at green lights. The most
+                  challenging part is orientation of the map and matching the
+                  map with outside environment. I have also found that there are
+                  many steps in navigation process and multiple touch point with
+                  the app.
+                </p>
+              </div>
+            </div>
+            <!-- row end -->
+
+            <!-- INTERVIEW RESULTS IMG row start -->
+            <div class="row x-gap-40 y-gap-40 layout-pt-md">
+              <div class="col-12">
+                <img src="images/work/design/thesis/results.png" width="100%" />
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section class="layout-pt-lg layout-pb-lg bg-dark-1">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-xl-7 col-lg-8">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-600 mr-16">03.-</p>
+                  <p class="uppercase fw-500 text-white">Empathise</p>
+                </div>
+
+                <h2 class="text-3xl fw-600 text-white mt-20">User Persona</h2>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  After interviweing 12 users, I have gone into more details
+                  about each specific user for each mode of transport. An
+                  extensive analysis of user personas are created for users who
+                  travel via bus, train and via car. This crucial step allows me
+                  to understand their specific needs and what their daily
+                  commute is like.
+                </p>
+              </div>
+            </div>
+            <!-- row end -->
+
+            <!-- USER PERSONA IMGrow start -->
+            <div class="row x-gap-40 y-gap-40 layout-pt-md">
+              <div class="col-12">
+                <img
+                  src="images/work/design/thesis/persona1.jpeg"
+                  width="100%"
+                />
+              </div>
+              <div class="row x-gap-40 y-gap-40 layout-pt-md">
+                <div class="col-12">
+                  <img
+                    src="images/work/design/thesis/persona2.jpeg"
+                    width="100%"
+                  />
+                </div>
+              </div>
+              <div class="row x-gap-40 y-gap-40 layout-pt-md">
+                <div class="col-12">
+                  <img
+                    src="images/work/design/thesis/persona3.jpeg"
+                    width="100%"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+
+          <!-- container start -->
+          <div class="container layout-pt-lg">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-xl-7 col-lg-8">
+                <h2 class="text-3xl fw-600 text-white mt-20">User Journey</h2>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  To further analysis the user persona, I have picked Persona 3
+                  to analyse the user's journey of navigating while driving in
+                  details. This is significant so that pain points are
+                  identified.
+                </p>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  From the table below, navigation process can be divided into 3
+                  categories: the planning phase (which normally takes a day
+                  before to plan out the trip), then the 'get ready' phase
+                  (which is the moment before the user leave the origin), and
+                  finally the navigation phase (while the user performs
+                  navigation). We see that Google Maps is a prime tool to plan
+                  out the journey and is predominantly used for searching for
+                  the destination's location, fastest route, and time. Then the
+                  device is being used again the moment before the user leave to
+                  check for real-time data such as traffic and finally, the
+                  device is used throughout the navigation process.
+                </p>
+                <p class="text-lg text-grey mt-24 sm:mt-16"></p>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  Main problems to take from this analysis conclude that there
+                  are multiple stages of interaction with the Google Maps where
+                  it is heavily visual. A repetition can be seen where the user
+                  had to re-type or input the destination twice during the
+                  planning phase and the 'get ready' phase. During navigation,
+                  the user is at high risk when driving. Pain points can be seen
+                  towards the end of the journey where destination can be
+                  challenging to locate due to multiple task in cognitive
+                  mapping in order to match the visual map and the real-time
+                  environment.
+                </p>
+              </div>
+            </div>
+            <!-- row end -->
+
+            <!-- USER JOURNEY IMG row start -->
+            <div class="row x-gap-40 y-gap-40 layout-pt-md">
+              <div class="col-12">
+                <img src="images/work/design/thesis/user-j.png" width="100%" />
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section data-parallax="0.7" class="layout-pt-lg layout-pb-lg">
+          <div
+            data-parallax-target
+            class="overlay-black-md bg-image js-lazy"
+            data-bg="images/work/design/thesis/problem-statement.jpg"
+          ></div>
+
+          <!-- container start -->
+          <div class="container z-5">
+            <!-- row start -->
+            <div class="row justify-content-center text-center">
+              <div class="col-12">
+                <h2 class="text-3xl text-white">Problem statement</h2>
+                <p class="text-xl md:text-lg text-white mt-16">
+                  How might we assist the navagination process in the urban
+                  environment so that commuters have an efficient and safer
+                  journey?
+                </p>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section class="layout-pt-lg layout-pb-lg">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-500 mr-16">04.-</p>
+                  <p class="text-dark uppercase fw-500">Define</p>
+                </div>
+              </div>
+
+              <div class="col-xl-7 col-lg-8">
+                <div class="md:mt-20">
+                  <h2 class="text-3xl text-black">The Problem</h2>
+                  <div class="mt-32">
+                    <h4 class="text-lg text-black sm:mt-16">
+                      Mapping visual map with real environment
+                    </h4>
+                    <p class="text-lg mt-12 fw-400 text-grey">
+                      Matching the visual map with the real environment is
+                      challenging where the user requires cognitive mapping
+                      ability to locate landmarks, street path, edge and point
+                      of interest.
+                    </p>
+                  </div>
+                  <div class="mt-20">
+                    <h4 class="text-lg text-black mt-24 sm:mt-16">High Risk</h4>
+                    <p class="text-lg mt-12 fw-400 text-grey">
+                      The user will constantly look at the visual map while
+                      navigating which is a hazard when travelling via car or
+                      walking on the busy urban street.
+                    </p>
+                  </div>
+                  <div class="mt-20">
+                    <h4 class="text-lg text-black mt-24 sm:mt-16">
+                      Visual maps are complex
+                    </h4>
+                    <p class="text-lg mt-12 fw-400 text-grey">
+                      As our urban city gets more complex with multiple road
+                      layers, more data collected and constant change in
+                      infrastructure, visual maps will constant more layers with
+                      visual icons and representation to match with the real
+                      environment. This can be confusing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section class="layout-pt-lg layout-pb-lg bg-dark-1">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-xl-7 col-lg-8">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-600 mr-16">05.-</p>
+                  <p class="uppercase fw-500 text-white">Ideate</p>
+                </div>
+
+                <h2 class="text-3xl fw-600 text-white mt-20">Prototype</h2>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  After understanding the user's pain point through research, I
+                  was able to combine the results and ideate the output for my
+                  solution. I wanted my solution to reduce planning phase so
+                  that any repetition of re-typing the location can be
+                  minimised. The solution should allow the user focus less on
+                  the digital device so that the user can concentrate on the
+                  outside environment, thus lower the risks. Lastly, the device
+                  should provide a one stop solution that returns a singular
+                  response instead of multiple options. This will help the user
+                  with decision making process during the rushing and
+                  spontaneous activity.
+                </p>
+                <h2 class="text-3xl fw-600 text-white mt-32">Development</h2>
+                <p class="text-lg text-grey mt-24 sm:mt-16">
+                  I got my hands on front-end development and coded React.js as
+                  a first iteration for prototype. The full process can be found
+                  in the blog that I have comprehensively explain each process
+                  and solutions to all the problems I have encountered. Here is
+                  the
+                  <a
+                    href="https://medium.com/graduation-thesis-2019"
+                    target="_blank"
+                    >Link</a
+                  >
+                  to view my journey to coding this prototype.
+                </p>
+              </div>
+            </div>
+            <!-- row end -->
+
+            <!-- WIREFRAME row start -->
+            <div class="row x-gap-40 y-gap-40 layout-pt-md">
+              <div class="row x-gap-40 y-gap-40 layout-pt-md">
+                <div class="col-12">
+                  <img
+                    src="images/work/design/thesis/prototype.jpeg"
+                    width="100%"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- FOOTER start -->
+        <footer class="footer -type-1 bg-dark-1">
+          <!-- container start -->
+          <div class="container">
+            <div class="footer__top">
+              <!-- row start -->
+              <div class="row y-gap-48 justify-content-between">
+                <div class="col-lg-auto col-sm-12">
+                  <a href="index.html" class="footer__logo text-white">
+                    <img
+                      class="header__logo__light js-lazy"
+                      data-srcset="images/logo/logo-white.png"
+                      data-src="images/logo/logo-white.png"
+                      width="180"
+                      alt="Logo"
+                    />
+                  </a>
+                </div>
+
+                <div class="col-lg-auto col-sm-4">
+                  <h4 class="text-xl fw-500 text-white">Explore</h4>
+
+                  <div
+                    class="footer__content text-base text-light mt-16 sm:mt-12"
+                  >
+                    <div>
+                      <a data-barba href="index.html" class="button -underline"
+                        >Home</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="about.html"
+                        class="button -underline mt-4"
+                        >About</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="work.html"
+                        class="button -underline mt-4"
+                        >Work</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="https://medium.com/pennypang-goals"
+                        target="_blank"
+                        class="button -underline mt-4"
+                        >Blog</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-auto col-sm-4">
+                  <h4 class="text-xl fw-500 text-white">Work</h4>
+
+                  <div
+                    class="footer__content text-base text-light mt-16 sm:mt-12"
+                  >
+                    <div>
+                      <a
+                        data-barba
+                        href="design.html"
+                        class="button -underline mt-4"
+                        >Design portfolio</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="speaking-pr.html"
+                        class="button -underline mt-4"
+                        >Speaking & PR</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="side-hustles.html"
+                        class="button -underline"
+                        >Side hustles</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-auto col-auto">
+                  <h4 class="text-xl fw-500 text-white">Social</h4>
+
+                  <div class="social -bordered mt-16 sm:mt-12">
+                    <a
+                      class="social__item text-white border-light"
+                      href="https://medium.com/pennypang-goals"
+                      target="_blank"
+                    >
+                      <i class="fa fa-medium"></i>
+                    </a>
+                    <a
+                      class="social__item text-white border-light"
+                      href="https://www.linkedin.com/in/pennytalalak/"
+                      target="_blank"
+                    >
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a
+                      class="social__item text-white border-light"
+                      href="mailto: talalakpenny@hotmail.com"
+                      target="_blank"
+                    >
+                      <i class="fa fa-envelope"></i>
+                    </a>
+                    <a
+                      class="social__item text-white border-light"
+                      href="https://www.youtube.com/channel/UCXR6RjSZOQPkdqJHSMAWdiQ"
+                      target="_blank"
+                    >
+                      <i class="fa fa-youtube-play"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- row end -->
+            </div>
+
+            <div class="footer__bottom -light">
+              <!-- row start -->
+              <div class="row">
+                <div class="col">
+                  <div class="footer__copyright">
+                    <p class="text-light">@ 2021, Penny Talalak</p>
+                  </div>
+                </div>
+              </div>
+              <!-- row end -->
+            </div>
+          </div>
+          <!-- container end -->
+        </footer>
+        <!-- footer end -->
+      </main>
+    </div>
+    <!-- barba container end -->
+
+    <!-- JavaScript -->
+    <script src="js/vendors.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

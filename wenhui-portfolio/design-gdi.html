@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-201082160-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-201082160-1");
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendors.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/favicon.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <link rel="manifest" href="img/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="img/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Good Data Institute</title>
+  </head>
+
+  <body class="preloader-visible" data-barba="wrapper">
+    <!-- preloader start -->
+    <div class="preloader js-preloader">
+      <div class="preloader__bg"></div>
+
+      <div class="preloader__progress">
+        <div class="preloader__progress__inner"></div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- cursor start -->
+    <div class="cursor js-cursor">
+      <div class="cursor__wrapper">
+        <div class="cursor__follower js-follower"></div>
+        <div class="cursor__label js-label"></div>
+        <div class="cursor__icon js-icon"></div>
+      </div>
+    </div>
+    <!-- cursor end -->
+
+    <!-- barba container start -->
+    <div class="barba-container" data-barba="container">
+      <!-- to-top-button start -->
+      <div data-cursor class="backButton js-backButton">
+        <span class="backButton__bg"></span>
+        <div class="backButton__icon__wrap">
+          <i
+            class="backButton__button js-top-button"
+            data-feather="arrow-up"
+          ></i>
+        </div>
+      </div>
+      <!-- to-top-button end -->
+
+      <main class="">
+        <!-- header start -->
+        <header class="header -dark -sticky-light js-header">
+          <!-- header__bar start -->
+          <div class="header__bar">
+            <div class="header__logo js-header-logo">
+              <a data-barba href="index.html">
+                <img
+                  class="header__logo__dark js-lazy"
+                  data-srcset="images/logo/logo-black.png"
+                  data-src="images/logo/logo-black.png"
+                  alt="Logo"
+                />
+              </a>
+              <a data-barba href="index.html">
+                <img
+                  class="header__logo__light js-lazy"
+                  data-srcset="images/logo/logo-white.png"
+                  data-src="images/logo/logo-white.png"
+                  alt="Logo"
+                />
+              </a>
+            </div>
+
+            <div class="header__menu js-header-menu">
+              <button type="button" class="nav-button-open js-nav-open">
+                <i class="icon" data-feather="menu"></i>
+              </button>
+            </div>
+          </div>
+          <!-- header__bar end -->
+
+          <!-- nav start -->
+          <nav class="nav js-nav">
+            <div class="nav__inner js-nav-inner">
+              <div class="nav__bg js-nav-bg"></div>
+
+              <div class="nav__container">
+                <div class="nav__header">
+                  <button type="button" class="nav-button-back js-nav-back">
+                    <i class="icon" data-feather="arrow-left-circle"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="nav-btn-close js-nav-close pointer-events-none"
+                  >
+                    <i class="icon" data-feather="x"></i>
+                  </button>
+                </div>
+
+                <div class="nav__content">
+                  <div class="nav__content__left">
+                    <div class="navList__wrap">
+                      <ul class="navList js-navList">
+                        <li>
+                          <a data-barba href="index.html"> Home </a>
+                        </li>
+                        <li>
+                          <a data-barba href="about.html"> About </a>
+                        </li>
+
+                        <li class="menu-item-has-children">
+                          <a>Work</a>
+
+                          <ul class="subnav-list">
+                            <li>
+                              <a data-barba href="design.html"
+                                >Design portfolio</a
+                              >
+                            </li>
+                            <li>
+                              <a data-barba href="speaking-pr.html"
+                                >Speaking & PR</a
+                              >
+                            </li>
+                            <li>
+                              <a data-barba href="side-hustles.html"
+                                >Side hustles</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li>
+                          <a
+                            data-barba
+                            href="https://medium.com/pennypang-goals"
+                            target="_blank"
+                          >
+                            Blog
+                          </a>
+                        </li>
+
+                        <li>
+                          <a data-barba href="contact.html"> Contact </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="nav__content__right">
+                    <div class="nav__info">
+                      <div class="nav__info__item js-navInfo-item">
+                        <h5 class="text-sm tracking-none fw-500">Location</h5>
+
+                        <div
+                          class="nav__info__content text-lg text-white mt-16"
+                        >
+                          <p>Sydney, Australia</p>
+                        </div>
+                      </div>
+
+                      <div class="nav__info__item js-navInfo-item">
+                        <h5 class="text-sm tracking-none fw-500">Socials</h5>
+
+                        <div
+                          class="nav__info__content text-lg text-white mt-16"
+                        >
+                          <a
+                            href="https://medium.com/pennypang-goals"
+                            target="_blank"
+                            >Medium</a
+                          >
+                          <a
+                            href="https://www.linkedin.com/in/pennytalalak/"
+                            target="_blank"
+                            >LinkedIn</a
+                          >
+                          <a
+                            href="https://dribbble.com/pennypang"
+                            target="_blank"
+                            >Dribble</a
+                          >
+                          <a
+                            href="https://www.youtube.com/channel/UCXR6RjSZOQPkdqJHSMAWdiQ"
+                            target="_blank"
+                            >YouTube</a
+                          >
+                        </div>
+                      </div>
+
+                      <div class="nav__info__item js-navInfo-item">
+                        <h5 class="text-sm tracking-none fw-500">Contact</h5>
+
+                        <div
+                          class="nav__info__content text-lg text-white mt-16"
+                        >
+                          <a href="mailto: talalakpenny@hotmail.com"
+                            >talalakpenny@hotmail.com</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <!-- nav end -->
+        </header>
+        <!-- header end -->
+
+        <!-- page header start -->
+        <section
+          class="
+            masthead
+            -type-work-1
+            -full-screen
+            bg-black
+            sm:text-center
+            js-masthead-type-work-1 js-bg
+          "
+        >
+          <div
+            data-parallax="0.7"
+            class="masthead__bg overlay-black-md js-image"
+          >
+            <div
+              data-parallax-target
+              class="bg-image js-lazy js-bg-item"
+              data-bg="images/work/design/gdi/hero-img.png"
+            ></div>
+          </div>
+
+          <div class="masthead__content">
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-xl-10 col-sm-10 z-3">
+                  <div data-split="lines">
+                    <p
+                      class="
+                        masthead__subtitle
+                        text-lg
+                        sm:text-base
+                        text-white
+                        mb-32
+                        sm:mb-24
+                        js-subtitle
+                      "
+                    >
+                      Website Re-design
+                    </p>
+                  </div>
+
+                  <div data-split="lines">
+                    <h1 class="masthead__title text-white fw-700 js-title">
+                      Good Data Institute
+                    </h1>
+                  </div>
+
+                  <div class="masthead__info__wrap">
+                    <div class="row y-gap-32">
+                      <div class="col-lg-auto col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Role
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              UX/UI Designer
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-auto offset-lg-1 col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Duration
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              3 months
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-auto offset-lg-1 col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Tools
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              Figma & Wix
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-auto offset-lg-1 col-sm-6">
+                        <div class="masthead__info">
+                          <div
+                            data-split="lines"
+                            class="masthead__item js-info-item"
+                          >
+                            <h5 class="text-lg leading-sm fw-600 text-white">
+                              Client
+                            </h5>
+                            <p
+                              class="
+                                text-lg
+                                leading-sm
+                                text-light
+                                mt-12
+                                sm:mt-8
+                              "
+                            >
+                              Good Data Institute
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- page header end -->
+
+        <!-- section start -->
+        <section class="layout-pt-lg layout-pb-lg">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-500 mr-16">01.-</p>
+                  <p class="text-dark uppercase fw-500">Context</p>
+                </div>
+              </div>
+
+              <div class="col-xl-7 col-lg-8">
+                <div class="md:mt-20">
+                  <h2 class="text-3xl text-black">Overview</h2>
+                  <p class="text-lg fw-400 text-grey mt-24 sm:mt-16">
+                    Good Data Institute is a non-profit organisation design to
+                    develop and build data capabilities for mission drive
+                    organisations. Their core focus is on the intersection of
+                    data analytics with strategy, as we believe that this forms
+                    the most valuable pro-bono opportunity for the sector.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section class="layout-pt-xs layout-pb-lg">
+          <!-- container start -->
+          <div class="container">
+            <!-- row start -->
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <div class="d-flex text-xs tracking-md pt-4">
+                  <p class="text-accent fw-500 mr-16">02.-</p>
+                  <p class="text-dark uppercase fw-500">Task</p>
+                </div>
+              </div>
+
+              <div class="col-xl-7 col-lg-8">
+                <div class="md:mt-20">
+                  <h2 class="text-3xl text-black">My Role</h2>
+                  <p class="text-lg fw-400 text-grey mt-24 sm:mt-16">
+                    My role as a UX/UI designer is to re-design the GDI website.
+                    I volunteered to help out this NFP organisation outside of
+                    my 9-5 job to bring value to the community and for a good
+                    cause.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section start -->
+        <section data-parallax="0.7" class="layout-pt-lg layout-pb-lg">
+          <div
+            data-parallax-target
+            class="bg-image js-lazy"
+            data-bg="images/work/design/gdi/view-web.jpeg"
+          ></div>
+
+          <!-- container start -->
+          <div class="container z-5">
+            <!-- row start -->
+            <div class="row justify-content-center text-center">
+              <div class="col-12">
+                <a
+                  href="https://penny41800.wixsite.com/gooddatainstitute"
+                  target="_blank"
+                >
+                  <h2 class="text-3xl text-white">View website here</h2>
+                  <p class="text-xl md:text-lg text-white mt-16">
+                    Website is currently in progress but you can preview the
+                    website here!
+                  </p>
+                </a>
+              </div>
+            </div>
+            <!-- row end -->
+          </div>
+          <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- FOOTER start -->
+        <footer class="footer -type-1 bg-dark-1">
+          <!-- container start -->
+          <div class="container">
+            <div class="footer__top">
+              <!-- row start -->
+              <div class="row y-gap-48 justify-content-between">
+                <div class="col-lg-auto col-sm-12">
+                  <a href="index.html" class="footer__logo text-white">
+                    <img
+                      class="header__logo__light js-lazy"
+                      data-srcset="images/logo/logo-white.png"
+                      data-src="images/logo/logo-white.png"
+                      width="180"
+                      alt="Logo"
+                    />
+                  </a>
+                </div>
+
+                <div class="col-lg-auto col-sm-4">
+                  <h4 class="text-xl fw-500 text-white">Explore</h4>
+
+                  <div
+                    class="footer__content text-base text-light mt-16 sm:mt-12"
+                  >
+                    <div>
+                      <a data-barba href="index.html" class="button -underline"
+                        >Home</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="about.html"
+                        class="button -underline mt-4"
+                        >About</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="work.html"
+                        class="button -underline mt-4"
+                        >Work</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="https://medium.com/pennypang-goals"
+                        target="_blank"
+                        class="button -underline mt-4"
+                        >Blog</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-auto col-sm-4">
+                  <h4 class="text-xl fw-500 text-white">Work</h4>
+
+                  <div
+                    class="footer__content text-base text-light mt-16 sm:mt-12"
+                  >
+                    <div>
+                      <a
+                        data-barba
+                        href="design.html"
+                        class="button -underline mt-4"
+                        >Design portfolio</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="speaking-pr.html"
+                        class="button -underline mt-4"
+                        >Speaking & PR</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        data-barba
+                        href="side-hustles.html"
+                        class="button -underline"
+                        >Side hustles</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-auto col-auto">
+                  <h4 class="text-xl fw-500 text-white">Social</h4>
+
+                  <div class="social -bordered mt-16 sm:mt-12">
+                    <a
+                      class="social__item text-white border-light"
+                      href="https://medium.com/pennypang-goals"
+                      target="_blank"
+                    >
+                      <i class="fa fa-medium"></i>
+                    </a>
+                    <a
+                      class="social__item text-white border-light"
+                      href="https://www.linkedin.com/in/pennytalalak/"
+                      target="_blank"
+                    >
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a
+                      class="social__item text-white border-light"
+                      href="mailto: talalakpenny@hotmail.com"
+                      target="_blank"
+                    >
+                      <i class="fa fa-envelope"></i>
+                    </a>
+                    <a
+                      class="social__item text-white border-light"
+                      href="https://www.youtube.com/channel/UCXR6RjSZOQPkdqJHSMAWdiQ"
+                      target="_blank"
+                    >
+                      <i class="fa fa-youtube-play"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- row end -->
+            </div>
+
+            <div class="footer__bottom -light">
+              <!-- row start -->
+              <div class="row">
+                <div class="col">
+                  <div class="footer__copyright">
+                    <p class="text-light">@ 2021, Penny Talalak</p>
+                  </div>
+                </div>
+              </div>
+              <!-- row end -->
+            </div>
+          </div>
+          <!-- container end -->
+        </footer>
+        <!-- footer end -->
+      </main>
+    </div>
+    <!-- barba container end -->
+
+    <!-- JavaScript -->
+    <script src="js/vendors.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
